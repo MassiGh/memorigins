@@ -1,0 +1,98 @@
+import * as React from "react"
+
+export default function App() {
+  const instagramUrl = "https://instagram.com/memorigins"
+
+  return (
+    <div style={styles.page}>
+      <div style={styles.card}>
+	<img
+	  src="/logo.png"
+	  alt="Memorigins logo"
+	  style={styles.logoSlot}
+	/>
+
+        <h1 style={styles.brand}>MEMORIGINS</h1>
+        <p style={styles.tagline}>
+          Timeless keepsakes, designed to hold your most meaningful moments.
+        </p>
+
+        <a href={instagramUrl} target="_blank" rel="noreferrer" style={styles.cta}>
+          Follow on Instagram
+        </a>
+
+        <div style={styles.footer}>© {new Date().getFullYear()} Memorigins</div>
+      </div>
+    </div>
+  )
+}
+
+const styles: Record<string, React.CSSProperties> = {
+  page: {
+    minHeight: "100vh",
+    display: "grid",
+    placeItems: "center",
+    padding: 28,
+    background: "#4A4343",
+    width: "100%",
+  },
+  card: {
+    width: "min(720px, 100%)",
+    margin: "0 auto",
+    padding: "48px 28px",
+    borderRadius: 22,
+    textAlign: "center",
+    background: "rgba(255,255,255,0.04)",
+    border: "1px solid rgba(255,255,255,0.08)",
+    backdropFilter: "blur(10px)",
+  },
+  logoSlot: {
+    width: 100,
+    height: 92,
+    margin: "0 auto 18px",
+    borderRadius: 18,
+    display: "grid",
+    placeItems: "center",
+    background: "rgba(246,242,238,0.06)",
+    border: "1px solid rgba(246,242,238,0.10)",
+    color: "rgba(246,242,238,0.55)",
+    letterSpacing: "0.08em",
+    fontSize: 12,
+    userSelect: "none",
+  },
+  brand: {
+    margin: 0,
+    fontWeight: 700,
+    letterSpacing: "0.12em",
+    lineHeight: 1.1,
+    fontSize: "clamp(28px, 4vw, 44px)",
+    background: "linear-gradient(90deg, #E5746A, #8E2F25)",
+    WebkitBackgroundClip: "text",
+    backgroundClip: "text",
+    color: "transparent",
+  },
+  tagline: {
+    margin: "14px auto 26px",
+    maxWidth: "44ch",
+    color: "#B8AEA8",
+    fontSize: 16,
+    lineHeight: 1.6,
+  },
+  cta: {
+    display: "inline-flex",
+    alignItems: "center",
+    justifyContent: "center",
+    padding: "12px 18px",
+    borderRadius: 999,
+    textDecoration: "none",
+    fontWeight: 600,
+    color: "#fff",
+    background: "linear-gradient(90deg, #E5746A, #8E2F25)",
+    boxShadow: "0 10px 22px rgba(0,0,0,0.28)",
+  },
+  footer: {
+    marginTop: 18,
+    fontSize: 13,
+    color: "rgba(184,174,168,0.9)",
+  },
+}
